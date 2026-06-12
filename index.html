@@ -1058,6 +1058,27 @@
                 white-space: nowrap;
             }
         }
+        
+        /* ===== TYPING EFFECT ===== */
+        .typed-text {
+            color: #24A1DE; /* Telegram blue to match the theme */
+            font-weight: 600;
+        }
+        .cursor {
+            display: inline-block;
+            width: 3px;
+            background-color: var(--text-primary);
+            animation: blink 1s infinite;
+            margin-left: 2px;
+            transform: translateY(2px);
+        }
+        .cursor.typing {
+            animation: none;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
         </style>
 </head>
 
@@ -1093,8 +1114,8 @@
             <h1 class="hero-title reveal delay-1"><span class="family-name">Qosimov</span><span
                     class="first-name">Sardorbek</span></h1>
             <p class="hero-role reveal delay-2">Statistics Student at TSUE</p>
-            <p class="hero-subtitle reveal delay-2">
-                Passionate about data analysis, programming and digital innovation.
+            <p class="hero-subtitle reveal delay-2" style="min-height: 30px;">
+                I specialize in <span class="typed-text"></span><span class="cursor">&nbsp;</span>
             </p>
             <div class="hero-actions reveal delay-3">
                 <a href="#contact" class="btn btn-primary">
@@ -1460,6 +1481,57 @@
             if (e.key === 'Escape') {
                 closeCertModal();
             }
+        });
+
+    
+        /* ===== DYNAMIC TYPING EFFECT ===== */
+        const textArray = [
+            "Data Analysis & Visualization.", 
+            "Statistical Modeling.", 
+            "Python Programming.",
+            "Digital Economy Innovations."
+        ];
+        const typingDelay = 100;
+        const erasingDelay = 50;
+        const newTextDelay = 2000; 
+        let textArrayIndex = 0;
+        let charIndex = 0;
+
+        const typedTextSpan = document.querySelector(".typed-text");
+        const cursorSpan = document.querySelector(".cursor");
+
+        function type() {
+            if(!typedTextSpan || !cursorSpan) return;
+            if (charIndex < textArray[textArrayIndex].length) {
+                if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+                typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, typingDelay);
+            } 
+            else {
+                cursorSpan.classList.remove("typing");
+                setTimeout(erase, newTextDelay);
+            }
+        }
+
+        function erase() {
+            if(!typedTextSpan || !cursorSpan) return;
+            if (charIndex > 0) {
+                if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+                typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
+                charIndex--;
+                setTimeout(erase, erasingDelay);
+            } 
+            else {
+                cursorSpan.classList.remove("typing");
+                textArrayIndex++;
+                if(textArrayIndex >= textArray.length) textArrayIndex = 0;
+                setTimeout(type, typingDelay + 500);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() { 
+            if(textArray.length) setTimeout(type, newTextDelay + 250);
         });
 
     </script>

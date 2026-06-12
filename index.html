@@ -1189,28 +1189,7 @@
             transform: translateY(-2px);
         }
         
-        /* ===== NEW TIMELINE ENHANCEMENTS ===== */
-        .timeline-item { position: relative; }
-        .timeline-dot {
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            background: #24A1DE;
-            border-radius: 50%;
-            top: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            box-shadow: 0 0 0 4px rgba(36, 161, 222, 0.2);
-            z-index: 3;
-        }
-        .timeline-item.left .timeline-dot { left: calc(100% + 1px); }
-        .timeline-item.right .timeline-dot { left: -1px; }
-        @media(max-width: 768px) {
-            .timeline-item.left .timeline-dot, .timeline-item.right .timeline-dot {
-                left: 0;
-                transform: translateX(-50%);
-            }
-        }
+
 
         /* ===== TECH STACK CARDS ===== */
         .tech-grid {
@@ -1595,7 +1574,7 @@
             <div class="timeline">
                 
                 <div class="timeline-item left reveal delay-1">
-                    <div class="timeline-dot"></div>
+                    
                     <div class="timeline-content glass-card liquid-glass">
                         <div class="timeline-date">Future Goal</div>
                         <h3 class="timeline-title">AI & FinTech Engineer</h3>
@@ -1604,7 +1583,7 @@
                 </div>
 
                 <div class="timeline-item right reveal delay-2">
-                    <div class="timeline-dot"></div>
+                    
                     <div class="timeline-content glass-card liquid-glass">
                         <div class="timeline-date">2026 - Present</div>
                         <h3 class="timeline-title">Tashkent State University of Economics</h3>
@@ -1613,7 +1592,7 @@
                 </div>
                 
                 <div class="timeline-item left reveal delay-3">
-                    <div class="timeline-dot"></div>
+                    
                     <div class="timeline-content glass-card liquid-glass">
                         <div class="timeline-date">2025</div>
                         <h3 class="timeline-title">Telegram Bot Developer</h3>
@@ -1622,7 +1601,7 @@
                 </div>
                 
                 <div class="timeline-item right reveal delay-4">
-                    <div class="timeline-dot"></div>
+                    
                     <div class="timeline-content glass-card liquid-glass">
                         <div class="timeline-date">2025</div>
                         <h3 class="timeline-title">First Portfolio Website</h3>
@@ -1631,7 +1610,7 @@
                 </div>
                 
                 <div class="timeline-item left reveal delay-5">
-                    <div class="timeline-dot"></div>
+                    
                     <div class="timeline-content glass-card liquid-glass">
                         <div class="timeline-date">2024</div>
                         <h3 class="timeline-title">Started Programming</h3>
@@ -1901,25 +1880,25 @@
             <div class="stats-counter-grid">
                 
                 <div class="stat-counter-card glass-card liquid-glass reveal delay-1">
-                    <div class="stat-counter-icon">🏆</div>
+                    <div class="stat-counter-icon" style="margin-bottom: 8px;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#24A1DE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg></div>
                     <div class="stat-counter-number" data-target="5">0</div>
                     <div class="stat-counter-label">Certificates Earned</div>
                 </div>
                 
                 <div class="stat-counter-card glass-card liquid-glass reveal delay-2">
-                    <div class="stat-counter-icon">🚀</div>
+                    <div class="stat-counter-icon" style="margin-bottom: 8px;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#24A1DE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg></div>
                     <div class="stat-counter-number" data-target="4">0</div>
                     <div class="stat-counter-label">Projects Completed</div>
                 </div>
                 
                 <div class="stat-counter-card glass-card liquid-glass reveal delay-3">
-                    <div class="stat-counter-icon">⏱️</div>
+                    <div class="stat-counter-icon" style="margin-bottom: 8px;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#24A1DE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
                     <div class="stat-counter-number" data-target="2">0</div>
                     <div class="stat-counter-label">Years Learning</div>
                 </div>
                 
                 <div class="stat-counter-card glass-card liquid-glass reveal delay-4">
-                    <div class="stat-counter-icon">💻</div>
+                    <div class="stat-counter-icon" style="margin-bottom: 8px;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#24A1DE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="20" x2="22" y2="20"></line></svg></div>
                     <div class="stat-counter-number" data-target="1000">0</div>
                     <div class="stat-counter-label">Hours of Study</div>
                 </div>
